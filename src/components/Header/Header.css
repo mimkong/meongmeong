@@ -1,0 +1,32 @@
+.nav {
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  background-color: #fff;
+}
+
+.nav__logo__img {
+  display: flex;
+  width: 230px;
+  height: 60px;
+  padding: 10px;
+  margin-left: 100px;
+}
+
+.nav__menu {
+  display: flex;
+  gap: 5px;
+}
+.nav__menu__li {
+  padding: 8px 50px;
+}
+
+.nav__mypage {
+  margin-right: 40px;
+}
+.nav__mypage__li {
+  padding: 8px 10px;
+}
