@@ -5,9 +5,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./main.css";
 import { useState } from "react";
 import data from "../data/data";
+import axios from "axios";
 
 function Main() {
-  let [items] = useState(data);
+  let [items, setItems] = useState(data);
+  let [visible, setVisible] = useState(false);
   return (
     <>
       <Container>
@@ -17,7 +19,24 @@ function Main() {
             return <Card items={items[i]} i={i + 1}></Card>;
           })}
         </Row>
-        <button>더보기</button>
+        <button
+          className="btn"
+          onClick={() => {
+            axios
+              .get(
+                "https://raw.githubusercontent.com/mimkong/meongmeongdata/master/data2.json"
+              )
+              .then((result) => {
+                let copy = [...items, ...result.data];
+                setItems(copy);
+              });
+            setVisible(!visible);
+          }}
+        >
+          더보기
+          {visible &&
+            (document.getElementsByClassName("btn")[0].style.display = "none")}
+        </button>
       </Container>
     </>
   );
