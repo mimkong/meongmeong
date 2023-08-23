@@ -5,15 +5,17 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./main.css";
 import { useState } from "react";
 import data from "../data/data";
+import newdata from "../data/newdata";
 import axios from "axios";
 
 function Main() {
-  let [items, setItems] = useState(data);
+  let [items, setItems] = useState(data); // best item data
+  let [newitems] = useState(newdata); // new item data
   let [visible, setVisible] = useState(false);
   return (
     <>
       <Container>
-        <h1>이달의 베스트</h1>
+        <h1>이달의 베스트 BEST of THIS MONTH</h1>
         <Row md={3}>
           {items.map((a, i) => {
             return <Card items={items[i]} i={i + 1}></Card>;
@@ -38,6 +40,28 @@ function Main() {
             (document.getElementsByClassName("btn")[0].style.display = "none")}
         </button>
       </Container>
+      <Container>
+        <h1>이달의 베스트 BEST of THIS MONTH</h1>
+        <Row md={3}>
+          {newitems.map((a, i) => {
+            return (
+              <Col>
+                <img
+                  src={
+                    "https://github.com/mimkong/meongmeongdata/blob/master/item" +
+                    (i + 7) +
+                    ".jpg?raw=true"
+                  }
+                  width="80%"
+                  height="380px"
+                ></img>
+                <h4>{newitems[i].title}</h4>
+                <p>{newitems[i].price}원</p>
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </>
   );
 }
@@ -52,6 +76,7 @@ function Card(props) {
           ".jpg?raw=true"
         }
         width="80%"
+        height="380px"
       ></img>
       <h4>{props.items.title}</h4>
       <p>{props.items.price}원</p>
