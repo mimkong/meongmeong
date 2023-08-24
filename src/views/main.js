@@ -31,6 +31,9 @@ function Main() {
               .then((result) => {
                 let copy = [...items, ...result.data];
                 setItems(copy);
+              })
+              .catch(() => {
+                console.log("실패했습니다.");
               });
             setVisible(!visible);
           }}
@@ -41,7 +44,7 @@ function Main() {
         </button>
       </Container>
       <Container>
-        <h1>이달의 베스트 BEST of THIS MONTH</h1>
+        <h1>이달의 신제품 NEW ITEM</h1>
         <Row md={3}>
           {newitems.map((a, i) => {
             return (
