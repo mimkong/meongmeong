@@ -1,0 +1,35 @@
+.category {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+li.active {
+  background-color: #f39c12;
+  color: white;
+}
+
+li:hover {
+  background-color: #f39c12;
+  color: white;
+}

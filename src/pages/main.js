@@ -7,13 +7,14 @@ import { useState } from "react";
 import data from "../data/data";
 import newdata from "../data/newdata";
 import axios from "axios";
-
+import MainSlider from "../components/MainSlider/MainSlider";
 function Main() {
   let [items, setItems] = useState(data); // best item data
   let [newitems] = useState(newdata); // new item data
   let [visible, setVisible] = useState(false);
   return (
     <>
+      <MainSlider />
       <Container>
         <h1>이달의 베스트 BEST of THIS MONTH</h1>
         <Row md={3}>
@@ -55,8 +56,8 @@ function Main() {
                     (i + 7) +
                     ".jpg?raw=true"
                   }
-                  width="80%"
-                  height="380px"
+                  width="70%"
+                  height="330px"
                 ></img>
                 <h4>{newitems[i].title}</h4>
                 <p>{newitems[i].price}원</p>
@@ -78,8 +79,8 @@ function Card(props) {
           props.i +
           ".jpg?raw=true"
         }
-        width="80%"
-        height="380px"
+        width="70%"
+        height="330px"
       ></img>
       <h4>{props.items.title}</h4>
       <p>{props.items.price}원</p>
