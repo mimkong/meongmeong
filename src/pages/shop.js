@@ -1,25 +1,38 @@
 import Category from "../components/Category";
-import { useState } from "react";
-import ProductList from "../components/ProducList";
+import ProductList from "../components/ProductList";
+import { useState, useEffect } from "react";
+import axios from "axios";
 function Shop({}) {
   const categoriesData = [
-    { id: 1, name: "ALL" },
-    { id: 2, name: "LIVING" },
-    { id: 3, name: "WALKING" },
-    { id: 4, name: "CLEAN" },
-    { id: 5, name: "FOOD" },
+    { name: "ALL", categories: null },
+    { name: "LIVING", categories: "living" },
+    { name: "WALKING", categories: "walking" },
+    { name: "CLEAN", categories: "clean" },
+    { name: "FOOD", categories: "food" },
   ];
-  const productsData = [
-    { id: 1, name: "T-Shirt", type: 1 },
-    { id: 2, name: "Jeans", type: 1 },
-    { id: 3, name: "Sneakers", type: 2 },
-    { id: 4, name: "Necklace", type: 3 },
-  ];
+
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCategorySelect = (type) => {
     setSelectedCategory(type);
   };
+
+  const [shopItems, setShopItems] = useState();
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://raw.githubusercontent.com/mimkong/meongmeongdata/master/data.json"
+      )
+      .then((result) => {
+        setShopItems(result.data);
+        console.log(shopItems);
+      })
+      .catch(() => {
+        console.log("json 데이터를 불러오는데 실패했습니다.");
+      });
+  }, []);
+
   return (
     <>
       <h1>SHOP</h1>
@@ -29,12 +42,12 @@ function Shop({}) {
         onSelectCategory={handleCategorySelect}
       />
       <ProductList
-        products={productsData.filter(
-          (product) => product.type === selectedCategory
-        )}
+        shopItems={
+          selectedCategory === null
+            ? shopItems
+            : shopItems.filter((item) => item.type === selectedCategory)
+        }
       />
-
-      {/* 상품 나열 */}
     </>
   );
 }

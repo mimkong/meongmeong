@@ -1,13 +1,13 @@
 import "./Category.css";
-import "./ProducList";
+import "./ProductList";
 function Category({ categories, selectedCategory, onSelectCategory }) {
   return (
     <div className="category">
       <ul>
         {categories.map((category) => (
           <li
-            className={selectedCategory === category.id ? "active" : ""}
-            onClick={() => onSelectCategory(category.id)}
+            className={selectedCategory === category.categories ? "active" : ""}
+            onClick={() => onSelectCategory(category.categories)}
           >
             {category.name}
           </li>

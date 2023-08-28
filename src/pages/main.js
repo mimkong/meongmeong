@@ -9,9 +9,9 @@ import newdata from "../data/newdata";
 import axios from "axios";
 import MainSlider from "../components/MainSlider/MainSlider";
 function Main() {
-  let [items, setItems] = useState(data); // best item data
-  let [newitems] = useState(newdata); // new item data
-  let [visible, setVisible] = useState(false);
+  const [items, setItems] = useState(data); // best item data
+  const [newitems] = useState(newdata); // new item data
+  const [visible, setVisible] = useState(false);
   return (
     <>
       <MainSlider />
