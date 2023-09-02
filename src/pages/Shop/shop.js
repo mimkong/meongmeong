@@ -1,7 +1,9 @@
-import Category from "../components/Category";
-import ProductList from "../components/ProductList";
+import Category from "./Category";
+import ProductList from "./ProductList";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { changeItem } from "../../store";
+import { useDispatch } from "react-redux";
 function Shop({}) {
   const categoriesData = [
     { name: "ALL", categories: null },
@@ -10,14 +12,12 @@ function Shop({}) {
     { name: "CLEAN", categories: "clean" },
     { name: "FOOD", categories: "food" },
   ];
-
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategorySelect = (type) => {
+  let [selectedCategory, setSelectedCategory] = useState(null);
+  let handleCategorySelect = (type) => {
     setSelectedCategory(type);
   };
-
-  const [shopItems, setShopItems] = useState();
+  let [shopItems, setShopItems] = useState();
+  let dispatch = useDispatch();
 
   useEffect(() => {
     axios
@@ -26,7 +26,7 @@ function Shop({}) {
       )
       .then((result) => {
         setShopItems(result.data);
-        console.log(shopItems);
+        dispatch(changeItem(result.data));
       })
       .catch(() => {
         console.log("json 데이터를 불러오는데 실패했습니다.");
