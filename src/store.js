@@ -5,7 +5,8 @@ let item = createSlice({
   initialState: [],
   reducers: {
     changeItem: (state, action) => {
-      state = action.payload;
+      console.log(action.payload);
+      return action.payload;
     },
   },
 });
