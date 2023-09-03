@@ -1,12 +1,12 @@
 import ProductList from "./Shop/ProductList";
+import { useSelector } from "react-redux";
 
 function Best() {
+  let a = useSelector((state) => state.item);
   return (
     <>
       <h1>BEST</h1>
-      {/* <ProductList
-        shopItems={shopItems.filter((item) => item.isBest === "true")}
-      /> */}
+      <ProductList shopItems={a.filter((item) => item.isBest === true)} />
     </>
   );
 }

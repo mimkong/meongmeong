@@ -13,11 +13,7 @@ function ProductList({ shopItems }) {
               return (
                 <Col>
                   <img
-                    src={
-                      "https://github.com/mimkong/meongmeongdata/blob/master/item" +
-                      a.id +
-                      ".jpg?raw=true"
-                    }
+                    src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${a.id}.jpg`}
                     width="80%"
                     height="380px"
                   ></img>
