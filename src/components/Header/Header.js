@@ -16,19 +16,19 @@ function Header() {
         <Link className="nav__menu__li" to="/best">
           BEST
         </Link>
-        <Link className="nav__menu__li" to="/about">
-          ABOUT
-        </Link>
       </div>
       <div className="nav__mypage">
         <Link className="nav__mypage__li" to="/login">
-          LOGIN
+          로그인
         </Link>
         <Link className="nav__mypage__li" to="/join">
-          JOIN
+          회원가입
         </Link>
-        <Link className="nav__mypage__li" to="/bag">
-          BAG
+        <Link className="nav__mypage__li" to="/recent_view">
+          최근 본 상품
+        </Link>
+        <Link className="nav__mypage__li" to="/cart">
+          장바구니
         </Link>
       </div>
     </header>

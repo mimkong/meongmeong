@@ -2,7 +2,7 @@ import ProductList from "./Shop/ProductList";
 import { useSelector } from "react-redux";
 
 function Best() {
-  let a = useSelector((state) => state.item);
+  const a = useSelector((state) => state.item);
   return (
     <>
       <h1>BEST</h1>

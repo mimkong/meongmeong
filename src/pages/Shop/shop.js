@@ -11,11 +11,11 @@ function Shop({}) {
     { name: "CLEAN", categories: "clean" },
     { name: "FOOD", categories: "food" },
   ];
-  let [selectedCategory, setSelectedCategory] = useState(null);
-  let handleCategorySelect = (type) => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const handleCategorySelect = (type) => {
     setSelectedCategory(type);
   };
-  let a = useSelector((state) => state.item);
+  const items = useSelector((state) => state.item);
 
   return (
     <>
@@ -28,8 +28,8 @@ function Shop({}) {
       <ProductList
         shopItems={
           selectedCategory === null
-            ? a
-            : a.filter((item) => item.type === selectedCategory)
+            ? items
+            : items.filter((item) => item.type === selectedCategory)
         }
       />
     </>
