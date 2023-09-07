@@ -2,8 +2,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
-
+import { useNavigate } from "react-router-dom";
 function ProductList({ shopItems }) {
+  const navigate = useNavigate();
   return (
     <>
       <Container>
@@ -11,7 +12,12 @@ function ProductList({ shopItems }) {
           {shopItems &&
             shopItems.map((a, i) => {
               return (
-                <Col>
+                <Col
+                  key={a.id}
+                  onClick={() => {
+                    navigate(`/shop/${a.id}`);
+                  }}
+                >
                   <img
                     src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${a.id}.jpg`}
                     width="80%"

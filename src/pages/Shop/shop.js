@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 
 function Shop({}) {
   const categoriesData = [
-    { name: "ALL", categories: null },
-    { name: "LIVING", categories: "living" },
-    { name: "WALKING", categories: "walking" },
-    { name: "CLEAN", categories: "clean" },
-    { name: "FOOD", categories: "food" },
+    { id: "1", name: "ALL", categories: null },
+    { id: "2", name: "LIVING", categories: "living" },
+    { id: "3", name: "WALKING", categories: "walking" },
+    { id: "4", name: "CLEAN", categories: "clean" },
+    { id: "5", name: "FOOD", categories: "food" },
   ];
   const [selectedCategory, setSelectedCategory] = useState(null);
   const handleCategorySelect = (type) => {

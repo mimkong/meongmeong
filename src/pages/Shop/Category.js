@@ -6,6 +6,7 @@ function Category({ categories, selectedCategory, onSelectCategory }) {
       <ul>
         {categories.map((category) => (
           <li
+            key={category.id}
             className={selectedCategory === category.categories ? "active" : ""}
             onClick={() => onSelectCategory(category.categories)}
           >

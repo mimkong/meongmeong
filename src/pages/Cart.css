@@ -15,6 +15,7 @@
   width: 100px;
   height: 200px;
   margin-right: 1rem;
+  object-fit: contain;
 }
 
 .product-name {

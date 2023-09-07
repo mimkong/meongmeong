@@ -1,5 +1,6 @@
 import "./Cart.css";
 import { useSelector, useDispatch } from "react-redux";
+
 import {
   toggleSelection,
   increaseQuantity,
@@ -20,14 +21,17 @@ function Cart() {
   return (
     <div className="cart-container">
       {cartItems.map((item) => (
-        <div className="cart-item">
+        <div className="cart-item" key={item.id}>
           <input
             type="checkbox"
             checked={item.selected}
             onChange={() => dispatch(toggleSelection(item.id))}
           />
-          <img src={item.imageUrl} className="product-image" />
-          <span className="product-name">{item.name}</span>
+          <img
+            src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${item.id}.jpg`}
+            className="product-image"
+          />
+          <span className="product-name">{item.title}</span>
           <span className="product-price">{item.price}원</span>
           <div className="quantity-controls">
             <button onClick={() => dispatch(decreaseQuantity(item.id))}>
