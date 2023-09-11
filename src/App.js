@@ -1,12 +1,14 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import Main from "./pages/main";
+import Main from "./pages/Main";
 import Footer from "./components/Footer/Footer";
 import { Routes, Route } from "react-router-dom";
 import Shop from "./pages/Shop/shop";
 import Detail from "./pages/Detail";
 import Best from "./pages/Best";
 import Cart from "./pages/Cart";
+import Login from "./pages/Login";
+import Join from "./pages/Join";
 import { changeItem } from "./store";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -37,6 +39,9 @@ function App() {
           <Route path="/shop/:id" element={<Detail />} />
           <Route path="/best" element={<Best />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/join" element={<Join />} />
+          <Route />
         </Routes>
       </div>
       <Footer />

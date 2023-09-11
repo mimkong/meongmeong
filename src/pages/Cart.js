@@ -26,6 +26,7 @@ function Cart() {
             type="checkbox"
             checked={item.selected}
             onChange={() => dispatch(toggleSelection(item.id))}
+            className="checkbox"
           />
           <img
             src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${item.id}.jpg`}
@@ -34,7 +35,10 @@ function Cart() {
           <span className="product-name">{item.title}</span>
           <span className="product-price">{item.price}원</span>
           <div className="quantity-controls">
-            <button onClick={() => dispatch(decreaseQuantity(item.id))}>
+            <button
+              onClick={() => dispatch(decreaseQuantity(item.id))}
+              className="quantity-button"
+            >
               -
             </button>
             <input
@@ -43,11 +47,19 @@ function Cart() {
               readOnly
               className="product-quantity"
             />
-            <button onClick={() => dispatch(increaseQuantity(item.id))}>
+            <button
+              onClick={() => dispatch(increaseQuantity(item.id))}
+              className="quantity-button"
+            >
               +
             </button>
           </div>
-          <button onClick={() => dispatch(removeItem(item.id))}>삭제</button>
+          <button
+            onClick={() => dispatch(removeItem(item.id))}
+            className="delete-button"
+          >
+            삭제
+          </button>
         </div>
       ))}
       <div className="cart-actions">
