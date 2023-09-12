@@ -9,6 +9,7 @@ import Best from "./pages/Best";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Join from "./pages/Join";
+import RecentlyViewedItem from "./pages/RecentlyViewedItem";
 import { changeItem } from "./store";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
+          <Route path="/recently_viewed" element={<RecentlyViewedItem />} />
           <Route />
         </Routes>
       </div>

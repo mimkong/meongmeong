@@ -19,7 +19,7 @@ function Main() {
         <h1>이달의 베스트 BEST of THIS MONTH</h1>
         <Row md={3}>
           {items.map((a, i) => {
-            return <Card items={items[i]} i={i + 1}></Card>;
+            return <Card key={i} items={items[i]} i={i + 1}></Card>;
           })}
         </Row>
         <button
@@ -49,7 +49,7 @@ function Main() {
         <Row md={3}>
           {newitems.map((a, i) => {
             return (
-              <Col>
+              <Col key={i}>
                 <img
                   src={
                     "https://github.com/mimkong/meongmeongdata/blob/master/item" +

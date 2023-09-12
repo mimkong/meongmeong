@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { addItem, increaseQuantity } from "../store";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CartModal from "../components/CartModal";
 import "./Detail.css";
 
@@ -9,11 +9,22 @@ function Detail() {
   const items = useSelector((state) => state.item);
   const cartItems = useSelector((state) => state.cart);
   const { id } = useParams();
-  const result = items.find((result) => result.id == id);
+  const result = items.find((item) => item.id == id);
   const isIdExistInCart = cartItems.some((item) => item.id == result?.id);
 
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    // 데이터가 준비되지 않았으면 아무것도 하지 않는다.
+    if (!result?.id) return;
+    let 꺼낸거 = localStorage.getItem("watched");
+    // localStorage의 값이 없다면 빈 배열로 시작한다.
+    꺼낸거 = 꺼낸거 ? JSON.parse(꺼낸거) : [];
+    꺼낸거.push(result?.id);
+    꺼낸거 = Array.from(new Set(꺼낸거));
+    localStorage.setItem("watched", JSON.stringify(꺼낸거));
+  }, [result]);
 
   return (
     <>

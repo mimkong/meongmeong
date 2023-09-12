@@ -24,7 +24,7 @@ function Header() {
         <Link className="nav__mypage__li" to="/join">
           회원가입
         </Link>
-        <Link className="nav__mypage__li" to="/recent_view">
+        <Link className="nav__mypage__li" to="/recently_viewed">
           최근 본 상품
         </Link>
         <Link className="nav__mypage__li" to="/cart">
