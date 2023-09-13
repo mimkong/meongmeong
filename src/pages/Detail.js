@@ -3,16 +3,16 @@ import { useParams } from "react-router-dom";
 import { addItem, increaseQuantity } from "../store";
 import { useState, useEffect } from "react";
 import CartModal from "../components/CartModal";
+import useCart from "../hooks/useCart";
+
 import "./Detail.css";
 
 function Detail() {
+  const { addToCart, isIdExistInCart } = useCart();
   const items = useSelector((state) => state.item);
-  const cartItems = useSelector((state) => state.cart);
   const { id } = useParams();
   const result = items.find((item) => item.id == id);
-  const isIdExistInCart = cartItems.some((item) => item.id == result?.id);
 
-  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
@@ -42,9 +42,7 @@ function Detail() {
           <button
             className="add-to-cart"
             onClick={() => {
-              isIdExistInCart
-                ? dispatch(increaseQuantity(result?.id))
-                : dispatch(addItem(result));
+              addToCart(result);
               setShowModal(true);
             }}
           >
