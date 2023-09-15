@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Main.css";
+import "../styles/PageStyle.css";
 import { useState } from "react";
 import data from "../data/data";
 import newdata from "../data/newdata";

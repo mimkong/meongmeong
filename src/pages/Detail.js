@@ -1,11 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { addItem, increaseQuantity } from "../store";
 import { useState, useEffect } from "react";
 import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
-
-import "./Detail.css";
+import "../styles/PageStyle.css";
 
 function Detail() {
   const { addToCart, isIdExistInCart } = useCart();

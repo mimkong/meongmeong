@@ -1,4 +1,4 @@
-import "./Cart.css";
+import "../styles/PageStyle.css";
 import { useSelector, useDispatch } from "react-redux";
 
 import {

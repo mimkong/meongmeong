@@ -8,15 +8,15 @@ import Detail from "./pages/Detail";
 import Best from "./pages/Best";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
-import Join from "./pages/Join";
+import Join from "./pages/Join/Join";
 import RecentlyViewedItem from "./pages/RecentlyViewedItem";
 import { changeItem } from "./store";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
+
 function App() {
   const dispatch = useDispatch();
-
   useEffect(() => {
     axios
       .get(
@@ -43,7 +43,6 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
           <Route path="/recently_viewed" element={<RecentlyViewedItem />} />
-          <Route />
         </Routes>
       </div>
       <Footer />

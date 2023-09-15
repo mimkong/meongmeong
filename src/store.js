@@ -62,8 +62,21 @@ const cart = createSlice({
   },
 });
 
+const user = createSlice({
+  name: "user",
+  initialState: { isLoggedIn: false },
+  reducers: {
+    login: (state) => {
+      state.isLoggedIn = true;
+    },
+    logout: (state, action) => {
+      return (state.isLoggedIn = action.payload);
+    },
+  },
+});
+
 export default configureStore({
-  reducer: { item: item.reducer, cart: cart.reducer },
+  reducer: { item: item.reducer, cart: cart.reducer, user: user.reducer },
 });
 
 export const { changeItem } = item.actions;
@@ -76,3 +89,4 @@ export const {
   removeAllItems,
   addItem,
 } = cart.actions;
+export const { login, logout } = user.actions;

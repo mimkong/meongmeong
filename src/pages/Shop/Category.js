@@ -1,4 +1,4 @@
-import "./Category.css";
+import "../../styles/PageStyle.css";
 import "./ProductList";
 function Category({ categories, selectedCategory, onSelectCategory }) {
   return (

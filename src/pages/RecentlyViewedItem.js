@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-import "./RecentlyViewedItem.css";
-import { addItem, increaseQuantity } from "../store";
+import "../styles/PageStyle.css";
 import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
 
