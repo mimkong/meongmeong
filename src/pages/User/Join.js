@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "../../styles/PageStyle.css";
 import DaumPost from "./DaumPost";
 import validateInput from "./validateInput";
-import { useDispatch } from "react-redux";
-import { login } from "../../store";
+import useUser from "../../hooks/useUser";
+
 function Join() {
-  const dispatch = useDispatch();
+  const [isLoggedIn, loginUser] = useUser();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +33,7 @@ function Join() {
     }
     // msw
     try {
-      const response = await fetch("/signup", {
+      const response = await fetch("/join", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ function Join() {
       const data = await response.json();
 
       if (response.ok) {
-        dispatch(login());
+        loginUser();
         alert(data.message); // "회원가입 성공!"
       } else {
         alert(data.error || "회원가입 실패");

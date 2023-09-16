@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addItem, increaseQuantity } from "../store";
-import { isAccordionItemSelected } from "react-bootstrap/esm/AccordionContext";
 
 function useCart() {
   const dispatch = useDispatch();

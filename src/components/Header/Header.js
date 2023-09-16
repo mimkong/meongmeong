@@ -5,11 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store";
 
 function Header() {
-  const isLoggedIn = useSelector((state) => state.user);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logout(false));
+    dispatch(logout());
   };
 
   return (

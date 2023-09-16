@@ -127,12 +127,60 @@ li:hover {
   margin: 0;
 }
 
-.product-options select {
-  padding: 10px;
+.product-option {
   margin-bottom: 20px;
-  width: 50%;
-  border: 1px solid #ccc;
+}
+
+.product-option select {
+  padding: 10px;
+  width: 100%;
   border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.selected-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.selected-product .quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.selected-product .quantity-controls button {
+  color: black;
+  background-color: #f7f7f7;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.selected-product .quantity-controls span {
+  font-weight: bold;
+}
+
+.selected-product button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.total-amount {
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 button {
