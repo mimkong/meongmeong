@@ -1,5 +1,4 @@
 function validateInput(formData) {
-  console.log(formData);
   const errors = [];
   // 공백이 아닌 문자가 있는지 검사
   const nameReg = /\S/;

@@ -18,7 +18,7 @@ function useUser() {
     dispatch(login());
   };
 
-  return [isLoggedIn, loginUser];
+  return { isLoggedIn, loginUser };
 }
 
 export default useUser;

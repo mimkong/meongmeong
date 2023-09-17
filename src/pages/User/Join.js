@@ -5,7 +5,7 @@ import validateInput from "./validateInput";
 import useUser from "../../hooks/useUser";
 
 function Join() {
-  const [isLoggedIn, loginUser] = useUser();
+  const { loginUser } = useUser();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -31,7 +31,7 @@ function Join() {
     if (!validateInput(formData)) {
       return; // 유효성 검사 실패 시 함수 종료
     }
-    // msw
+    // /join경로에 POST요청을 보내 회원가입 시도 후 동작 수행하기
     try {
       const response = await fetch("/join", {
         method: "POST",
@@ -58,7 +58,7 @@ function Join() {
   const handleComplete = (data) => {
     let fullAddress = data.address;
     setFormData({ ...formData, address: fullAddress });
-    setShowPost(false); // 주소 검색 컴포넌트 숨기기
+    setShowPost(false); // 주소 검색 완료 시 컴포넌트 숨기기
   };
 
   return (
@@ -119,7 +119,7 @@ function Join() {
           className="modal"
           onClick={(e) => {
             if (e.target.className === "modal") {
-              setShowPost(false);
+              setShowPost(false); // 모달 백그라운드 클릭 시 컴포넌트 숨기기
             }
           }}
         >

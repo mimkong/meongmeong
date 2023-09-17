@@ -12,22 +12,7 @@ const item = createSlice({
 
 const cart = createSlice({
   name: "cart",
-  initialState: [
-    {
-      id: 1,
-      title: "보송보송타월",
-      price: 7900,
-      quantity: 1,
-      selected: false,
-    },
-    {
-      id: 2,
-      title: "선데이백",
-      price: 169000,
-      quantity: 2,
-      selected: false,
-    },
-  ],
+  initialState: [],
   reducers: {
     toggleSelection: (state, action) => {
       const item = state.find((item) => item.id === action.payload);
