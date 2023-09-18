@@ -1,5 +1,6 @@
 import "../styles/PageStyle.css";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import {
   toggleSelection,
@@ -8,11 +9,14 @@ import {
   removeItem,
   removeSelectedItems,
   removeAllItems,
+  selectedItems,
 } from "../store";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const calculateTotal = () => {
     return cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -67,15 +71,26 @@ function Cart() {
           선택 삭제
         </button>
         <button onClick={() => dispatch(removeAllItems())}>전체 삭제</button>
-        <button>선택 상품 주문</button>
-        <button>전체 상품 주문</button>
+        <button
+          onClick={() => {
+            const selectedCartItems = cartItems.filter((item) => item.selected);
+            navigate("/order", { state: { items: selectedCartItems } });
+          }}
+        >
+          선택 상품 주문
+        </button>
       </div>
       <div className="cart-summary">
         <div>주문 금액: {calculateTotal()}원</div>
         <div>배송비: 3000원</div>
         <div>합계: {calculateTotal() + 3000}원</div>
       </div>
-      <button className="checkout">주문하기</button>
+      <button
+        className="checkout"
+        onClick={() => navigate("/order", { state: { items: cartItems } })}
+      >
+        주문하기
+      </button>
     </div>
   );
 }

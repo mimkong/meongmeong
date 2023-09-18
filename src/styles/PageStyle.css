@@ -379,3 +379,28 @@ button:hover {
   background-color: #ff5252;
   color: white;
 }
+
+/* Order.css */
+
+.order-payment-container {
+  padding: 20px;
+}
+
+.order-payment-container section {
+  margin-bottom: 20px;
+}
+
+.order-payment-container h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.order-payment-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}

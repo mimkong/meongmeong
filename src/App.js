@@ -9,11 +9,13 @@ import Best from "./pages/Best";
 import Cart from "./pages/Cart";
 import Login from "./pages/User/Login";
 import Join from "./pages/User/Join";
+import Order from "./pages/Order";
 import RecentlyViewedItem from "./pages/RecentlyViewedItem";
 import { changeItem } from "./store";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axios from "axios";
+import OrderComplete from "./pages/OrderComplete";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,13 +38,15 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/shop" element={<Shop />} exact />
+          <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:id" element={<Detail />} />
           <Route path="/best" element={<Best />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/join" element={<Join />} />
-          <Route path="/recently_viewed" element={<RecentlyViewedItem />} />
+          <Route path="/recently-viewed" element={<RecentlyViewedItem />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/order-complete" element={<OrderComplete />} />
         </Routes>
       </div>
       <Footer />

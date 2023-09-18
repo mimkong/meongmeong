@@ -2,7 +2,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const item = createSlice({
   name: "item",
-  initialState: [],
+  initialState: [{}],
   reducers: {
     changeItem: (state, action) => {
       return action.payload;
@@ -73,5 +73,6 @@ export const {
   removeSelectedItems,
   removeAllItems,
   addItem,
+  selectedItems,
 } = cart.actions;
 export const { login, logout } = user.actions;

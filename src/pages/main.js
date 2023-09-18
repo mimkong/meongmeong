@@ -4,63 +4,64 @@ import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/PageStyle.css";
 import { useState } from "react";
-import data from "../data/data";
-import newdata from "../data/newdata";
-import axios from "axios";
 import MainSlider from "../components/MainSlider/MainSlider";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 function Main() {
-  const [items, setItems] = useState(data); // best item data
-  const [newitems] = useState(newdata); // new item data
+  const items = useSelector((state) => state.item);
+  const [maxBestItems, setMaxBestItems] = useState(3);
   const [visible, setVisible] = useState(false);
+
+  const bestItems = items
+    .filter((item) => item.isBest === true)
+    .slice(0, maxBestItems);
+  const newItems = items.filter((item) => item.isNew === true).slice(0, 3);
+
+  const navigate = useNavigate();
+
   return (
     <>
       <MainSlider />
       <Container>
         <h1>이달의 베스트 BEST of THIS MONTH</h1>
         <Row md={3}>
-          {items.map((a, i) => {
-            return <Card key={i} items={items[i]} i={i + 1}></Card>;
+          {bestItems.map((a, i) => {
+            return <Card key={i} bestItems={bestItems[i]} i={i + 1}></Card>;
           })}
         </Row>
-        <button
-          className="btn"
-          onClick={() => {
-            axios
-              .get(
-                "https://raw.githubusercontent.com/mimkong/meongmeongdata/master/data2.json"
-              )
-              .then((result) => {
-                let copy = [...items, ...result.data];
-                setItems(copy);
-              })
-              .catch(() => {
-                console.log("실패했습니다.");
-              });
-            setVisible(!visible);
-          }}
-        >
-          더보기
-          {visible &&
-            (document.getElementsByClassName("btn")[0].style.display = "none")}
-        </button>
+        {maxBestItems < items.filter((item) => item.isBest === true).length && ( // 버튼을 최대 아이템 개수보다 작을 때만 표시
+          <button
+            className="btn"
+            onClick={() => {
+              setMaxBestItems(maxBestItems + 3); // 더보기 클릭 시 3개씩 추가하기
+              setVisible(!visible);
+            }}
+          >
+            더보기
+            {visible &&
+              (document.getElementsByClassName("btn")[0].style.display =
+                "none")}
+          </button>
+        )}
       </Container>
       <Container>
         <h1>이달의 신제품 NEW ITEM</h1>
         <Row md={3}>
-          {newitems.map((a, i) => {
+          {newItems.map((a, i) => {
             return (
-              <Col key={i}>
+              <Col key={i} onClick={() => navigate(`/shop/${a.id}`)}>
                 <img
                   src={
                     "https://github.com/mimkong/meongmeongdata/blob/master/item" +
-                    (i + 7) +
+                    newItems[i].id +
                     ".jpg?raw=true"
                   }
                   width="70%"
                   height="330px"
                 ></img>
-                <h4>{newitems[i].title}</h4>
-                <p>{newitems[i].price}원</p>
+                <h4>{newItems[i].title}</h4>
+                <p>{newItems[i].price}원</p>
               </Col>
             );
           })}
@@ -71,19 +72,20 @@ function Main() {
 }
 
 function Card(props) {
+  const navigate = useNavigate();
   return (
-    <Col>
+    <Col onClick={() => navigate(`/shop/${props.bestItems.id}`)}>
       <img
         src={
           "https://github.com/mimkong/meongmeongdata/blob/master/item" +
-          props.i +
+          props.bestItems.id +
           ".jpg?raw=true"
         }
         width="70%"
         height="330px"
       ></img>
-      <h4>{props.items.title}</h4>
-      <p>{props.items.price}원</p>
+      <h4>{props.bestItems.title}</h4>
+      <p>{props.bestItems.price}원</p>
     </Col>
   );
 }

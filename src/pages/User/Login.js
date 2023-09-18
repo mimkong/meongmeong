@@ -6,7 +6,7 @@ function Login() {
   const [Id, setId] = useState("");
   const [password, setPassword] = useState("");
 
-  const [isLoggedIn, loginUser] = useUser();
+  const { loginUser } = useUser();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

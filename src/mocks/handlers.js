@@ -22,4 +22,14 @@ export const handlers = [
       );
     }
   }),
+
+  rest.get("/api/user", (req, res, ctx) => {
+    return res(
+      ctx.json({
+        name: "멍멍이",
+        postalCode: "123-456",
+        phoneNumber: "010-1234-5678",
+      })
+    );
+  }),
 ];

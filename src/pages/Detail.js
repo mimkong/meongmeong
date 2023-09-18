@@ -1,10 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
 import "../styles/PageStyle.css";
-import { decreaseQuantity, increaseQuantity } from "../store";
 
 function Detail() {
   const { addToCart } = useCart();
@@ -34,10 +33,6 @@ function Detail() {
     const itemId = e.target.value;
     const item = items.find((item) => item.id == itemId);
     setSelectedItem(item);
-  };
-
-  const handleQuantityChange = (e) => {
-    setQuantity(Number(e.target.value));
   };
 
   const handleDelete = () => {

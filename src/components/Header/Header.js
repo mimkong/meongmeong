@@ -34,7 +34,7 @@ function Header() {
             <button className="nav__mypage__li" onClick={handleLogout}>
               로그아웃
             </button>
-            <Link className="nav__mypage__li" to="/recently_viewed">
+            <Link className="nav__mypage__li" to="/recently-viewed">
               최근 본 상품
             </Link>
             <Link className="nav__mypage__li" to="/cart">
@@ -50,7 +50,7 @@ function Header() {
             <Link className="nav__mypage__li" to="/join">
               회원가입
             </Link>
-            <Link className="nav__mypage__li" to="/recently_viewed">
+            <Link className="nav__mypage__li" to="/recently-viewed">
               최근 본 상품
             </Link>
             <Link className="nav__mypage__li" to="/cart">
