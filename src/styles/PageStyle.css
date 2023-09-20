@@ -325,6 +325,13 @@ button:hover {
   text-align: center;
 }
 
+.main-container h1 {
+  color: #ae8f69;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  padding: 2rem;
+}
+
 /* RecentlyViewedItem.css */
 .recently-viewed {
   width: 100%;

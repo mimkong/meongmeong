@@ -7,14 +7,15 @@
   position: sticky;
   background-color: #fff;
   z-index: 5;
+  padding: 0.8rem;
 }
 
 .nav__logo__img {
   display: flex;
   width: 230px;
   height: 70px;
-  padding: 10px;
-  margin-left: 100px;
+  padding: 0.63rem;
+  margin-left: 6.3rem;
 }
 
 .nav__menu {
@@ -22,12 +23,28 @@
   gap: 5px;
 }
 .nav__menu__li {
-  padding: 8px 50px;
+  padding: 0.5rem 3.1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .nav__mypage {
-  margin-right: 40px;
+  margin-right: 2.5rem;
 }
 .nav__mypage__li {
-  padding: 8px 10px;
+  padding: 0.5rem 0.63rem;
+  font-size: 1.1rem;
+}
+
+.nav__menu__li,
+.nav__mypage__li {
+  color: #ae8f69;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav__menu__li:hover,
+.nav__mypage__li:hover {
+  color: #e1c08d;
 }

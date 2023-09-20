@@ -23,8 +23,8 @@ function Main() {
   return (
     <>
       <MainSlider />
-      <Container>
-        <h1>이달의 베스트 BEST of THIS MONTH</h1>
+      <Container className="main-container">
+        <h1>BEST of THIS MONTH</h1>
         <Row md={3}>
           {bestItems.map((a, i) => {
             return <Card key={i} bestItems={bestItems[i]} i={i + 1}></Card>;
@@ -45,8 +45,8 @@ function Main() {
           </button>
         )}
       </Container>
-      <Container>
-        <h1>이달의 신제품 NEW ITEM</h1>
+      <Container className="main-container">
+        <h1>NEW ITEM</h1>
         <Row md={3}>
           {newItems.map((a, i) => {
             return (

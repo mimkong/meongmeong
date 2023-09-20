@@ -3,10 +3,9 @@ import slide1 from "./slide1.jpg";
 import slide2 from "./slide2.jpg";
 import slide3 from "./slide3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 function MainSlider() {
   return (
@@ -17,7 +16,7 @@ function MainSlider() {
         pagination={{
           dynamicBullets: true,
         }}
-        modules={[Navigation, Pagination]}
+        modules={[Navigation]}
         className="swiper"
       >
         <SwiperSlide>

@@ -7,6 +7,16 @@
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 500px;
+  height: 36.2rem;
   object-fit: cover;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #000;
+  font-size: 1.3rem !important;
+}
+.swiper-button-next:active,
+.swiper-button-prev:active {
+  opacity: 0.5;
 }
