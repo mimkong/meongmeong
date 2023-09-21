@@ -31,18 +31,20 @@ function Main() {
           })}
         </Row>
         {maxBestItems < items.filter((item) => item.isBest === true).length && ( // 버튼을 최대 아이템 개수보다 작을 때만 표시
-          <button
-            className="btn"
-            onClick={() => {
-              setMaxBestItems(maxBestItems + 3); // 더보기 클릭 시 3개씩 추가하기
-              setVisible(!visible);
-            }}
-          >
-            더보기
-            {visible &&
-              (document.getElementsByClassName("btn")[0].style.display =
-                "none")}
-          </button>
+          <div className="btn-container">
+            <button
+              className="btn"
+              onClick={() => {
+                setMaxBestItems(maxBestItems + 3); // 더보기 클릭 시 3개씩 추가하기
+                setVisible(!visible);
+              }}
+            >
+              더보기
+              {visible &&
+                (document.getElementsByClassName("btn")[0].style.display =
+                  "none")}
+            </button>
+          </div>
         )}
       </Container>
       <Container className="main-container">

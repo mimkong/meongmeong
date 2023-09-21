@@ -62,56 +62,73 @@ function Join() {
   };
 
   return (
-    <div className="signup-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="이름"
-          value={formData.name}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="userId"
-          placeholder="아이디"
-          value={formData.userId}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="비밀번호"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="비밀번호 확인"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="phoneNumber"
-          placeholder="전화번호"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-        />
-        <div className="address-container">
+    <div className="join-container">
+      <h1>JOIN US</h1>
+      <form className="join-form" onSubmit={handleSubmit}>
+        <div className="input-group">
+          <label>이름</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-group">
+          <label>아이디</label>
+          <input
+            type="text"
+            name="userId"
+            value={formData.userId}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-group">
+          <label>비밀번호</label>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-group">
+          <label>비밀번호 확인</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-group">
+          <label>전화번호</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-group">
+          <label>주소</label>
           <input
             type="text"
             name="address"
-            placeholder="주소"
             value={formData.address}
             onChange={handleChange}
           />
-          <button type="button" onClick={() => setShowPost(true)}>
-            주소 찾기
-          </button>
         </div>
-        <button type="submit">회원가입하기</button>
+        <button
+          className="address-btn"
+          type="button"
+          onClick={() => setShowPost(true)}
+        >
+          주소 찾기
+        </button>
+        <button className="submit-btn" type="submit">
+          회원가입하기
+        </button>
       </form>
       {/* 주소 찾기 모달창 */}
       {showPost && (

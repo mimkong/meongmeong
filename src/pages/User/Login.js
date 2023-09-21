@@ -39,8 +39,8 @@ function Login() {
 
   return (
     <div className="login-container">
-      <h2>로그인</h2>
-      <form onSubmit={handleSubmit}>
+      <h1>LOGIN</h1>
+      <form className="login-form" onSubmit={handleSubmit}>
         <div className="input-group">
           <label>아이디</label>
           <input
@@ -59,7 +59,7 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">로그인</button>
       </form>
     </div>
   );

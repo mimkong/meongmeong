@@ -18,7 +18,7 @@ function Shop({}) {
   const items = useSelector((state) => state.item);
 
   return (
-    <>
+    <div className="menu-container">
       <h1>SHOP</h1>
       <Category
         categories={categoriesData}
@@ -32,7 +32,7 @@ function Shop({}) {
             : items.filter((item) => item.type === selectedCategory)
         }
       />
-    </>
+    </div>
   );
 }
 
