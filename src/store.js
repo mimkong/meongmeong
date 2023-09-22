@@ -33,13 +33,25 @@ const cart = createSlice({
       }
     },
     removeItem: (state, action) => {
-      return state.filter((item) => item.id !== action.payload);
+      const isConfirmed = window.confirm("정말 삭제하시겠습니까?");
+
+      if (isConfirmed) {
+        return state.filter((item) => item.id !== action.payload);
+      }
     },
     removeSelectedItems: (state) => {
-      return state.filter((item) => !item.selected);
+      const isConfirmed = window.confirm("정말 삭제하시겠습니까?");
+
+      if (isConfirmed) {
+        return state.filter((item) => !item.selected);
+      }
     },
     removeAllItems: () => {
-      return [];
+      const isConfirmedAllItems = window.confirm("장바구니를 비우시겠습니까?");
+
+      if (isConfirmedAllItems) {
+        return [];
+      }
     },
     addItem: (state, action) => {
       state.push(action.payload);
@@ -55,7 +67,11 @@ const user = createSlice({
       return { ...state, isLoggedIn: true };
     },
     logout: (state) => {
-      return { ...state, isLoggedIn: false };
+      const isConfirmed = window.confirm("로그아웃 하시겠습니까?");
+
+      if (isConfirmed) {
+        return { ...state, isLoggedIn: false };
+      }
     },
   },
 });

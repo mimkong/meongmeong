@@ -12,3 +12,9 @@ body {
 .content-wrapper {
   flex: 1 0 auto;
 }
+
+:root {
+  --main-color: #ae8f69;
+  --bright-main-color: #e1c08d;
+  --dark-main-color: #6b553b;
+}

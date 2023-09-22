@@ -20,10 +20,22 @@
 .footer-logo p {
   font-size: 12px;
   margin: 0;
+  color: var(--dark-main-color);
 }
 
-.footer-social a {
-  text-decoration: none;
-  margin-right: 1rem;
-  font-size: 1.25rem;
+.footer-cs p {
+  font-weight: 600;
+  color: var(--dark-main-color);
+}
+
+.footer-social {
+  color: var(--dark-main-color);
+}
+
+.footer-social svg {
+  margin-right: 15px;
+}
+
+.footer-social svg:hover {
+  cursor: pointer;
 }

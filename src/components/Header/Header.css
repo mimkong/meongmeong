@@ -18,6 +18,19 @@
   margin-left: 6.3rem;
 }
 
+.nav__toggle {
+  display: none;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.nav__slide-menu {
+  display: flex;
+  align-items: center;
+}
+
 .nav__menu {
   display: flex;
   gap: 5px;
@@ -39,6 +52,7 @@
 
 .nav__menu__li,
 .nav__mypage__li {
+  background-color: #fff;
   color: #ae8f69;
   text-decoration: none;
   transition: color 0.3s;
@@ -47,4 +61,16 @@
 .nav__menu__li:hover,
 .nav__mypage__li:hover {
   color: #e1c08d;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav__logo__img {
+    margin: 0;
+  }
 }

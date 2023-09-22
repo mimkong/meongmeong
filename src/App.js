@@ -37,6 +37,7 @@ function App() {
       <div className="content-wrapper">
         <Header />
         <Routes>
+          <Route path="*" element={<div>없는 페이지 입니다.</div>} />
           <Route path="/" element={<Main />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/:id" element={<Detail />} />

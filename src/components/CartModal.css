@@ -12,6 +12,21 @@
 
 .cart-modal-content {
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 5px;
+  text-align: center;
+}
+
+.cart-modal-content button {
+  margin: 10px;
+}
+
+.cart-modal-content button:nth-child(2) {
+  background-color: #333;
+  color: white;
+}
+
+.cart-modal-content button:nth-child(3) {
+  background-color: #ae8f69;
+  color: white;
 }

@@ -29,12 +29,14 @@ function Footer() {
         <div className="footer-social">
           <FontAwesomeIcon
             icon={faGithub}
+            size="2x"
             onClick={() =>
               handleOpenNewTab("https://github.com/mimkong/meongmeong")
             }
           />
           <FontAwesomeIcon
             icon={faBlog}
+            size="2x"
             onClick={() =>
               handleOpenNewTab(
                 "https://velog.io/@x5foddl/series/%EC%87%BC%ED%95%91%EB%AA%B0%EB%A7%8C%EB%93%A4%EA%B8%B0%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8"

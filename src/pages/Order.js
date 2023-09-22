@@ -10,7 +10,10 @@ function Order() {
   const orderItems = location.state?.items || cartItems;
   const [message, setMessage] = useState("");
 
-  const totalAmount = cartItems.reduce((sum, item) => sum + item.price, 0);
+  const totalAmount = orderItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   const navigate = useNavigate();
 
@@ -20,8 +23,14 @@ function Order() {
       .then((data) => setUserInfo(data));
   }, []);
 
+  const userState = useSelector((state) => state.user);
+  const [name, setName] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
   return (
     <div className="order-payment-container">
+      <h1>ORDER</h1>
       <section>
         <h2>주문자 정보</h2>
         <p>이름: {userInfo.name}</p>
@@ -42,18 +51,31 @@ function Order() {
 
       <section>
         <h2>주문 상품</h2>
-        <ul>
-          {orderItems.map((item) => (
-            <li key={item.id}>
-              {item.title} ({item.price}원) 수량 : {item.quantity}개
-            </li>
-          ))}
-        </ul>
+        {orderItems.map((item) => (
+          <div className="order-item" key={item.id}>
+            <div className="order-item-left">
+              <img
+                src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${item.id}.jpg`}
+                className="product-image"
+              />
+              <span className="product-name">{item.title}</span>
+            </div>
+            <div className="order-item-right">
+              <span className="product-price">{item.price}원</span>
+              <span className="product-quantity">x {item.quantity}</span>
+              <span className="product-total-price">
+                {item.price * item.quantity}원
+              </span>
+            </div>
+          </div>
+        ))}
       </section>
 
       <section>
         <h2>총 결제금액</h2>
-        <p>{totalAmount}원</p>
+        <p>
+          상품금액 {totalAmount} + 배송비 3000 = 합계 {totalAmount + 3000}원
+        </p>
       </section>
 
       <div className="order-payment-buttons">

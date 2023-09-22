@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "../styles/PageStyle.css";
 import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
+import { useNavigate } from "react-router-dom";
 
 function RecentlyViewedItem() {
   const [watchedId, setWatchedId] = useState([]);
@@ -18,20 +19,35 @@ function RecentlyViewedItem() {
     .filter(Boolean);
 
   const deleteItem = (id) => {
-    const updateItem = watchedId.filter((item) => item !== id);
-    setWatchedId(updateItem);
-    localStorage.setItem("watched", JSON.stringify(updateItem));
+    const isConfirmed = window.confirm("정말 삭제하시겠습니까?");
+
+    if (isConfirmed) {
+      const updateItem = watchedId.filter((item) => item !== id);
+      setWatchedId(updateItem);
+      localStorage.setItem("watched", JSON.stringify(updateItem));
+    }
   };
 
   const [showModal, setShowModal] = useState(false);
   const { addToCart, isIdExistInCart } = useCart();
 
+  const navigate = useNavigate();
+
   return (
     <>
-      <div className="recently-viewed">
-        {matchedItems.map((product) => {
-          return (
-            <div key={product.id} className="product-card">
+      <div className="recently-viewed-container">
+        <h1>RECENT VIEW</h1>
+        {matchedItems.length === 0 ? (
+          <p className="empty-text">최근 본 상품 내역이 없습니다.</p>
+        ) : (
+          matchedItems.map((product) => (
+            <div
+              key={product.id}
+              className="product-card"
+              onClick={() => {
+                navigate(`/shop/${product.id}`);
+              }}
+            >
               <img
                 className="product-image"
                 src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${product.id}.jpg`}
@@ -39,7 +55,7 @@ function RecentlyViewedItem() {
               />
               <div className="product-details">
                 <h2>{product.title}</h2>
-                <p>가격: {product.price}원</p>
+                <p>{product.price}원</p>
               </div>
               <div className="product-actions">
                 <button
@@ -59,8 +75,8 @@ function RecentlyViewedItem() {
                 </button>
               </div>
             </div>
-          );
-        })}
+          ))
+        )}
       </div>
       {showModal && <CartModal onClose={() => setShowModal(false)} />}
     </>

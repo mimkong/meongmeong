@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
 import "../styles/PageStyle.css";
+import { useNavigate } from "react-router-dom";
 
 function Detail() {
   const { addToCart } = useCart();
@@ -12,6 +13,9 @@ function Detail() {
   const result = items.find((item) => item.id == id);
 
   const [showModal, setShowModal] = useState(false);
+
+  const userState = useSelector((state) => state.user);
+  const navigate = useNavigate();
 
   // 최근 본 상품
   useEffect(() => {
@@ -64,6 +68,7 @@ function Detail() {
           <p>최소주문수량 1개 이상</p>
 
           <div className="product-option">
+            <h6>옵션</h6>
             <select onChange={handleOptionChange}>
               <option value="">{"- [필수]옵션을 선택해주세요 -"}</option>
               <option disabled>------</option>
@@ -73,38 +78,75 @@ function Detail() {
 
           {selectedItem && (
             <div className="selected-product">
-              <div>{selectedItem.title}</div>
+              <div className="selected-product-data">{selectedItem.title}</div>
               <div className="quantity-controls">
-                <button onClick={decreaseItemQuantity}>-</button>
+                <button
+                  className="quantity-button"
+                  onClick={decreaseItemQuantity}
+                >
+                  -
+                </button>
                 <span>{quantity}</span>
-                <button onClick={increaseItemQuantity}>+</button>
+                <button
+                  className="quantity-button"
+                  onClick={increaseItemQuantity}
+                >
+                  +
+                </button>
               </div>
-              <button onClick={handleDelete}>삭제</button>
-              <div>{selectedItem.price * quantity}원</div>
+              <button className="delete-btn" onClick={handleDelete}>
+                Delete
+              </button>
+              <div className="selected-product-data">
+                {selectedItem.price * quantity}원
+              </div>
             </div>
           )}
 
           {selectedItem && (
             <div className="total-amount">
-              총액: {selectedItem.price * quantity}원 ({quantity}개)
+              <div className="total-amount-text">총액: </div>
+              <div className="total-amount-price">
+                {selectedItem.price * quantity}원 ({quantity}개)
+              </div>
             </div>
           )}
-
-          <button
-            className="add-to-cart"
-            onClick={() => {
-              if (selectedItem) {
-                const updatedItem = { ...selectedItem, quantity: quantity };
-                addToCart(updatedItem);
-                setShowModal(true);
-              } else {
-                alert("옵션을 선택해주세요.");
-              }
-            }}
-          >
-            장바구니 담기
-          </button>
-          <button className="buy-now">바로 구매하기</button>
+          <div className="detail-btn">
+            <button
+              className="add-to-cart"
+              onClick={() => {
+                if (selectedItem) {
+                  const updatedItem = { ...selectedItem, quantity: quantity };
+                  addToCart(updatedItem);
+                  setShowModal(true);
+                } else {
+                  alert("옵션을 선택해주세요.");
+                }
+              }}
+            >
+              장바구니 담기
+            </button>
+            <button
+              className="buy-now"
+              onClick={() => {
+                if (userState.isLoggedIn) {
+                  // 사용자가 로그인한 상태인지 확인
+                  if (selectedItem) {
+                    const updatedItem = { ...selectedItem, quantity: quantity };
+                    navigate("/order", { state: { items: [updatedItem] } });
+                  } else {
+                    alert("옵션을 선택해주세요.");
+                  }
+                } else {
+                  // 로그인하지 않았을 경우
+                  alert("회원만 구매 가능합니다.");
+                  navigate("/join"); // 회원가입 페이지로 리디렉션
+                }
+              }}
+            >
+              바로 구매하기
+            </button>
+          </div>
         </div>
       </div>
       {showModal && <CartModal onClose={() => setShowModal(false)} />}

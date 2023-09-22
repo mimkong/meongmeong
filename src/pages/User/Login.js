@@ -38,29 +38,31 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
-      <h1>LOGIN</h1>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <div className="input-group">
-          <label>아이디</label>
-          <input
-            type="Id"
-            value={Id}
-            onChange={(e) => setId(e.target.value)}
-            required
-          />
-        </div>
-        <div className="input-group">
-          <label>비밀번호</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">로그인</button>
-      </form>
+    <div className="container">
+      <div className="login-container">
+        <h1>LOGIN</h1>
+        <form className="login-form" onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label>아이디</label>
+            <input
+              type="Id"
+              value={Id}
+              onChange={(e) => setId(e.target.value)}
+              required
+            />
+          </div>
+          <div className="input-group">
+            <label>비밀번호</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">로그인</button>
+        </form>
+      </div>
     </div>
   );
 }
