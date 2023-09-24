@@ -41,19 +41,16 @@ function RecentlyViewedItem() {
           <p className="empty-text">최근 본 상품 내역이 없습니다.</p>
         ) : (
           matchedItems.map((product) => (
-            <div
-              key={product.id}
-              className="product-card"
-              onClick={() => {
-                navigate(`/shop/${product.id}`);
-              }}
-            >
+            <div className="product-card">
               <img
                 className="product-image"
                 src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${product.id}.jpg`}
-                alt={product.title}
+                onClick={() => navigate(`/shop/${product.id}`)}
               />
-              <div className="product-details">
+              <div
+                className="product-details"
+                onClick={() => navigate(`/shop/${product.id}`)}
+              >
                 <h2>{product.title}</h2>
                 <p>{product.price}원</p>
               </div>

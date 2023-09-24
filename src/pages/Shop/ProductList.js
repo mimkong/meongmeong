@@ -13,6 +13,9 @@ function ProductList({ shopItems }) {
             shopItems.map((a, i) => {
               return (
                 <Col
+                  xs={12}
+                  md={4}
+                  className="product-list"
                   key={a.id}
                   onClick={() => {
                     navigate(`/shop/${a.id}`);

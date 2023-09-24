@@ -15,14 +15,6 @@ button {
   margin-bottom: 30px;
 }
 
-h1 {
-  text-align: center;
-  margin: 4rem 0;
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
-  color: var(--main-color);
-}
-
 .empty-text {
   text-align: center;
 }
@@ -98,6 +90,10 @@ h1 {
 .cart-item-right {
   display: flex;
   align-items: center;
+}
+
+.cart-item-left:hover {
+  cursor: pointer;
 }
 
 .quantity-button {
@@ -204,6 +200,7 @@ h1 {
 
 .product-info h1 {
   font-weight: 600;
+  color: var(--black-color);
 }
 
 .product-info h1,
@@ -579,6 +576,18 @@ h1 {
 .order-complete-container button {
   background-color: var(--main-color);
   color: white;
+}
+
+/* ProductList.css */
+.product-list {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.product-list h5 {
+  margin-top: 1rem;
+  font-weight: 600;
 }
 
 /* 768px screen width */

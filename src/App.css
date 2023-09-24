@@ -1,8 +1,25 @@
+:root {
+  --main-color: #ae8f69;
+  --bright-main-color: #e1c08d;
+  --dark-main-color: #6b553b;
+  --black-color: #4c4c4c;
+}
+
 html,
 body {
   height: 100%;
   margin: 0;
+  color: #4c4c4c;
 }
+
+h1 {
+  text-align: center;
+  margin: 4rem 0;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  color: var(--main-color);
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -11,10 +28,4 @@ body {
 
 .content-wrapper {
   flex: 1 0 auto;
-}
-
-:root {
-  --main-color: #ae8f69;
-  --bright-main-color: #e1c08d;
-  --dark-main-color: #6b553b;
 }

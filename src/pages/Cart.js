@@ -34,7 +34,10 @@ function Cart() {
           <>
             {cartItems.map((item) => (
               <div className="cart-item" key={item.id}>
-                <div className="cart-item-left">
+                <div
+                  className="cart-item-left"
+                  onClick={() => navigate(`/shop/${item.id}`)}
+                >
                   <input
                     type="checkbox"
                     checked={item.selected}
