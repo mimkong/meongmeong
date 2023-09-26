@@ -20,13 +20,16 @@ function Header() {
         </Link>
       </div>
       <div className="nav__menu">
-        <Link className="nav__menu__li" to="/shop">
-          SHOP
-        </Link>
-        <div>
-          {/* <Link to="/shop/category1">카테고리1</Link>
-      <Link to="/shop/category2">카테고리2</Link>
-      <Link to="/shop/category3">카테고리3</Link> */}
+        <div className="nav__menu__dropdown">
+          <Link className="nav__menu__li" to="/shop">
+            SHOP
+          </Link>
+          <div className="nav__menu__categories">
+            <Link to="/shop/living">LIVING</Link>
+            <Link to="/shop/walking">WALIKING</Link>
+            <Link to="/shop/clean">CLEAN</Link>
+            <Link to="/shop/food">FOOD</Link>
+          </div>
         </div>
         <Link className="nav__menu__li" to="/best">
           BEST

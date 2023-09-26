@@ -18,7 +18,7 @@ function ProductList({ shopItems }) {
                   className="product-list"
                   key={a.id}
                   onClick={() => {
-                    navigate(`/shop/${a.id}`);
+                    navigate(`/shop/product/${a.id}`);
                   }}
                 >
                   <img

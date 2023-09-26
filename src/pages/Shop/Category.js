@@ -15,8 +15,7 @@ function Category({ categories, selectedCategory, onSelectCategory }) {
             <Link
               to={`/shop/${category.categories}`}
               onClick={() => {
-                console.log("Category clicked:", category.name);
-                onSelectCategory(categories.categories);
+                onSelectCategory(category.categories);
               }}
             >
               {category.name}

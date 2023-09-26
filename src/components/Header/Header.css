@@ -9,7 +9,6 @@
   z-index: 5;
   padding: 0.8rem;
 }
-
 .nav__logo__img {
   display: flex;
   width: 230px;
@@ -40,6 +39,7 @@
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
+  position: static;
 }
 
 .nav__mypage {
@@ -63,6 +63,38 @@
   color: #e1c08d;
 }
 
+.nav__menu__dropdown:hover .nav__menu__categories {
+  display: block;
+}
+
+.nav__menu__dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav__menu__categories {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ae8f69;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.nav__menu__categories a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #ae8f69;
+  text-decoration: none;
+}
+
+.nav__menu__categories a:hover {
+  background-color: #e1c08d;
+  color: #fff;
+}
 @media screen and (max-width: 768px) {
   .nav {
     display: flex;

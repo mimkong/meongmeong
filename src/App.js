@@ -40,7 +40,7 @@ function App() {
           <Route path="*" element={<div>없는 페이지 입니다.</div>} />
           <Route path="/" element={<Main />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/shop/:id" element={<Detail />} />
+          <Route path="/shop/product/:id" element={<Detail />} />
           <Route path="/best" element={<Best />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
@@ -48,7 +48,7 @@ function App() {
           <Route path="/recently-viewed" element={<RecentlyViewedItem />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order-complete" element={<OrderComplete />} />
-          <Route path="/shop/:category?" element={<Shop />} />
+          <Route path="/shop/:category" element={<Shop />} />
         </Routes>
       </div>
       <Footer />

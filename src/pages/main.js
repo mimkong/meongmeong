@@ -52,7 +52,11 @@ function Main() {
         <Row md={3}>
           {newItems.map((a, i) => {
             return (
-              <Col key={i} onClick={() => navigate(`/shop/${a.id}`)}>
+              <Col
+                key={i}
+                onClick={() => navigate(`/shop/product/${a.id}`)}
+                style={{ cursor: "pointer" }}
+              >
                 <img
                   src={
                     "https://github.com/mimkong/meongmeongdata/blob/master/item" +
@@ -76,7 +80,10 @@ function Main() {
 function Card(props) {
   const navigate = useNavigate();
   return (
-    <Col onClick={() => navigate(`/shop/${props.bestItems.id}`)}>
+    <Col
+      onClick={() => navigate(`/shop/product/${props.bestItems.id}`)}
+      style={{ cursor: "pointer" }}
+    >
       <img
         src={
           "https://github.com/mimkong/meongmeongdata/blob/master/item" +
