@@ -23,6 +23,11 @@ function Header() {
         <Link className="nav__menu__li" to="/shop">
           SHOP
         </Link>
+        <div>
+          {/* <Link to="/shop/category1">카테고리1</Link>
+      <Link to="/shop/category2">카테고리2</Link>
+      <Link to="/shop/category3">카테고리3</Link> */}
+        </div>
         <Link className="nav__menu__li" to="/best">
           BEST
         </Link>

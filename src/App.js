@@ -48,6 +48,7 @@ function App() {
           <Route path="/recently-viewed" element={<RecentlyViewedItem />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order-complete" element={<OrderComplete />} />
+          <Route path="/shop/:category?" element={<Shop />} />
         </Routes>
       </div>
       <Footer />

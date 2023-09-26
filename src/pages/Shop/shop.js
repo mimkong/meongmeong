@@ -1,6 +1,7 @@
+import { useParams } from "react-router-dom";
 import Category from "./Category";
 import ProductList from "./ProductList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 function Shop({}) {
@@ -11,7 +12,18 @@ function Shop({}) {
     { id: "4", name: "CLEAN", categories: "clean" },
     { id: "5", name: "FOOD", categories: "food" },
   ];
+
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const { category } = useParams();
+
+  useEffect(() => {
+    const matchedCategory = categoriesData.find(
+      (c) => c.categories === category
+    );
+    setSelectedCategory(matchedCategory ? matchedCategory.categories : null);
+  }, [category]);
+
   const handleCategorySelect = (type) => {
     setSelectedCategory(type);
   };

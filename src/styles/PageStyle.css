@@ -42,20 +42,24 @@ button {
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.1s ease-in-out;
-  font-size: 1.3rem;
-  font-family: "Nunito", sans-serif;
-  font-weight: 500;
   color: var(--main-color);
 }
 
-.category li.active {
-  background-color: var(--main-color);
-  color: white;
+.category a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
 }
 
+.category li.active,
 .category li:hover {
   background-color: var(--main-color);
-  color: white;
+}
+.category li.active a,
+.category li:hover a {
+  color: #fff;
 }
 
 /* Cart.css */

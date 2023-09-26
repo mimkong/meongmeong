@@ -1,5 +1,7 @@
 import "../../styles/PageStyle.css";
 import "./ProductList";
+import { Link } from "react-router-dom";
+
 function Category({ categories, selectedCategory, onSelectCategory }) {
   return (
     <div className="category">
@@ -10,7 +12,15 @@ function Category({ categories, selectedCategory, onSelectCategory }) {
             className={selectedCategory === category.categories ? "active" : ""}
             onClick={() => onSelectCategory(category.categories)}
           >
-            {category.name}
+            <Link
+              to={`/shop/${category.categories}`}
+              onClick={() => {
+                console.log("Category clicked:", category.name);
+                onSelectCategory(categories.categories);
+              }}
+            >
+              {category.name}
+            </Link>
           </li>
         ))}
       </ul>
