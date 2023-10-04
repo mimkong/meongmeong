@@ -39,3 +39,16 @@
 .footer-social svg:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-loco,
+  .footer-cs,
+  .footer-social {
+    margin: 1rem 0;
+  }
+}

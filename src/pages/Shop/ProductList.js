@@ -3,6 +3,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
+import numberWithCommas from "../../utils/format";
+
 function ProductList({ shopItems }) {
   const navigate = useNavigate();
   return (
@@ -27,7 +29,7 @@ function ProductList({ shopItems }) {
                     height="380px"
                   ></img>
                   <h5>{shopItems[i].title}</h5>
-                  <p>{shopItems[i].price}원</p>
+                  <p>{numberWithCommas(shopItems[i].price)}원</p>
                 </Col>
               );
             })}

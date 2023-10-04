@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import numberWithCommas from "../utils/format";
 
 import {
   toggleSelection,
@@ -34,22 +35,23 @@ function Cart() {
           <>
             {cartItems.map((item) => (
               <div className="cart-item" key={item.id}>
-                <div
-                  className="cart-item-left"
-                  onClick={() => navigate(`/shop/${item.id}`)}
-                >
+                <div className="cart-item-left">
                   <input
                     type="checkbox"
                     checked={item.selected}
                     onChange={() => dispatch(toggleSelection(item.id))}
                     className="checkbox"
                   />
-                  <img
-                    src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${item.id}.jpg`}
-                    className="product-image"
-                  />
-                  <span className="product-name">{item.title}</span>
-                  <span className="product-price">{item.price}원</span>
+                  <div onClick={() => navigate(`/shop/product/${item.id}`)}>
+                    <img
+                      src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${item.id}.jpg`}
+                      className="product-image"
+                    />
+                    <span className="product-name">{item.title}</span>
+                    <span className="product-price">
+                      {numberWithCommas(item.price)}원
+                    </span>
+                  </div>
                 </div>
                 <div className="cart-item-right">
                   <div className="quantity-controls">
@@ -124,15 +126,15 @@ function Cart() {
             <div className="cart-summary">
               <div className="cart-summary-container">
                 <div>주문 금액</div>
-                <div>{calculateTotal()}원</div>
+                <div>{numberWithCommas(calculateTotal())}원</div>
               </div>
               <div className="cart-summary-container">
                 <div>배송비</div>
-                <div>3000원</div>
+                <div>3,000원</div>
               </div>
               <div className="cart-summary-container">
                 <div>합계</div>
-                <div>{calculateTotal() + 3000}원</div>
+                <div>{numberWithCommas(calculateTotal() + 3000)}원</div>
               </div>
             </div>
             <button

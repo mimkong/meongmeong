@@ -4,6 +4,7 @@ import "../styles/PageStyle.css";
 import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
 import { useNavigate } from "react-router-dom";
+import numberWithCommas from "../utils/format";
 
 function RecentlyViewedItem() {
   const [watchedId, setWatchedId] = useState([]);
@@ -52,7 +53,7 @@ function RecentlyViewedItem() {
                 onClick={() => navigate(`/shop/${product.id}`)}
               >
                 <h2>{product.title}</h2>
-                <p>{product.price}원</p>
+                <p>{numberWithCommas(product.price)}원</p>
               </div>
               <div className="product-actions">
                 <button

@@ -7,6 +7,7 @@ import { useState } from "react";
 import MainSlider from "../components/MainSlider/MainSlider";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import numberWithCommas from "../utils/format";
 
 function Main() {
   const items = useSelector((state) => state.item);
@@ -56,6 +57,8 @@ function Main() {
                 key={i}
                 onClick={() => navigate(`/shop/product/${a.id}`)}
                 style={{ cursor: "pointer" }}
+                xs={12}
+                md={4}
               >
                 <img
                   src={
@@ -66,8 +69,8 @@ function Main() {
                   width="70%"
                   height="330px"
                 ></img>
-                <h4>{newItems[i].title}</h4>
-                <p>{newItems[i].price}원</p>
+                <h5>{newItems[i].title}</h5>
+                <p>{numberWithCommas(newItems[i].price)}원</p>
               </Col>
             );
           })}
@@ -81,6 +84,8 @@ function Card(props) {
   const navigate = useNavigate();
   return (
     <Col
+      xs={12}
+      md={4}
       onClick={() => navigate(`/shop/product/${props.bestItems.id}`)}
       style={{ cursor: "pointer" }}
     >
@@ -93,8 +98,8 @@ function Card(props) {
         width="70%"
         height="330px"
       ></img>
-      <h4>{props.bestItems.title}</h4>
-      <p>{props.bestItems.price}원</p>
+      <h5>{props.bestItems.title}</h5>
+      <p>{numberWithCommas(props.bestItems.price)}원</p>
     </Col>
   );
 }

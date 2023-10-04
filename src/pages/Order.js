@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../styles/PageStyle.css";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import numberWithCommas from "../utils/format";
 
 function Order() {
   const [userInfo, setUserInfo] = useState({});
@@ -61,10 +62,12 @@ function Order() {
               <span className="product-name">{item.title}</span>
             </div>
             <div className="order-item-right">
-              <span className="product-price">{item.price}원</span>
+              <span className="product-price">
+                {numberWithCommas(item.price)}원
+              </span>
               <span className="product-quantity">x {item.quantity}</span>
               <span className="product-total-price">
-                {item.price * item.quantity}원
+                {numberWithCommas(item.price * item.quantity)}원
               </span>
             </div>
           </div>
@@ -74,7 +77,8 @@ function Order() {
       <section>
         <h2>총 결제금액</h2>
         <p>
-          상품금액 {totalAmount} + 배송비 3000 = 합계 {totalAmount + 3000}원
+          상품금액 {numberWithCommas(totalAmount)} + 배송비 3,000 = 합계{" "}
+          {numberWithCommas(totalAmount + 3000)}원
         </p>
       </section>
 

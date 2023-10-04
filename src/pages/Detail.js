@@ -5,6 +5,7 @@ import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
 import "../styles/PageStyle.css";
 import { useNavigate } from "react-router-dom";
+import numberWithCommas from "../utils/format";
 
 function Detail() {
   const { addToCart } = useCart();
@@ -63,7 +64,7 @@ function Detail() {
         </div>
         <div className="product-info">
           <h1>{result?.title}</h1>
-          <h2>{result?.price}원</h2>
+          <h2>{numberWithCommas(result?.price)}원</h2>
           <p>배송비: 3,000원</p>
           <p>최소주문수량 1개 이상</p>
 
@@ -98,7 +99,7 @@ function Detail() {
                 Delete
               </button>
               <div className="selected-product-data">
-                {selectedItem.price * quantity}원
+                {numberWithCommas(selectedItem.price * quantity)}원
               </div>
             </div>
           )}
@@ -107,7 +108,8 @@ function Detail() {
             <div className="total-amount">
               <div className="total-amount-text">총액: </div>
               <div className="total-amount-price">
-                {selectedItem.price * quantity}원 ({quantity}개)
+                {numberWithCommas(selectedItem.price * quantity)}원 ({quantity}
+                개)
               </div>
             </div>
           )}

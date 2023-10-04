@@ -104,6 +104,10 @@ h1 {
   align-items: center;
 }
 
+.cart-item-left {
+  display: flex;
+}
+
 .cart-item-left:hover {
   cursor: pointer;
 }
@@ -412,6 +416,9 @@ h1 {
 }
 
 /* Main.css */
+.main-container {
+  text-align: center;
+}
 
 .main-container h1 {
   color: var(--main-color);
@@ -546,10 +553,6 @@ h1 {
   outline: none;
 }
 
-.product-price {
-  margin-right: 20rem;
-}
-
 .product-quantity {
   margin-right: 10rem;
 }
@@ -597,7 +600,8 @@ h1 {
   margin-top: 1rem;
 }
 
-.product-list h5 {
+.product-list h5,
+.main-container h5 {
   margin-top: 1rem;
   font-weight: 600;
 }
@@ -624,6 +628,48 @@ h1 {
   /* Cart.css */
   .cart-container {
     width: 90%;
+  }
+
+  .product-image {
+    width: 80px;
+    height: 160px;
+  }
+
+  .product-name {
+    margin-right: 1rem;
+  }
+
+  .cart-item-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .delete-button {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  .cart-actions {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .cart-actions button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .cart-summary {
+    margin-top: 3rem;
+    font-size: 1rem;
+  }
+
+  .cart-summary-container:nth-child(3) {
+    font-size: 1.1rem;
+  }
+
+  .checkout {
+    margin-top: 1rem;
+    font-size: 1rem;
   }
 
   /* Detail.css */
@@ -661,7 +707,7 @@ h1 {
   }
 
   .product-image {
-    margin-bottom: 10px;
+    width: 60%;
   }
 
   /* Order.css */
