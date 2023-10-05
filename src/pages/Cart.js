@@ -42,7 +42,10 @@ function Cart() {
                     onChange={() => dispatch(toggleSelection(item.id))}
                     className="checkbox"
                   />
-                  <div onClick={() => navigate(`/shop/product/${item.id}`)}>
+                  <div
+                    className="cart-item-navigate"
+                    onClick={() => navigate(`/shop/product/${item.id}`)}
+                  >
                     <img
                       src={`https://raw.githubusercontent.com/mimkong/meongmeongdata/master/item${item.id}.jpg`}
                       className="product-image"

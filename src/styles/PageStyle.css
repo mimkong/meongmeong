@@ -629,19 +629,15 @@ h1 {
     width: 90%;
   }
 
-  .product-image {
-    width: 80px;
-    height: 160px;
-  }
-
-  .product-name {
-    margin-right: 1rem;
+  span {
+    display: inline-block;
   }
 
   .cart-item-right {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .delete-button {
     margin-top: 1rem;
     margin-left: 0;
@@ -703,10 +699,6 @@ h1 {
   .product-card {
     flex-direction: column;
     align-items: center;
-  }
-
-  .product-image {
-    width: 60%;
   }
 
   /* Order.css */
