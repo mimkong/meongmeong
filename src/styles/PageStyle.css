@@ -606,7 +606,6 @@ h1 {
   font-weight: 600;
 }
 
-/* 768px screen width */
 @media screen and (max-width: 768px) {
   /* Common Styles */
   h1 {
