@@ -7,6 +7,7 @@ import store from "./store";
 import { worker } from "./mocks/worker";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 // 개발모드에서만 MSW 사용하기
 if (process.env.NODE_ENV === "development") {
   worker.start();
