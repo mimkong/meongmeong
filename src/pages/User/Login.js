@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const response = await fetch("/login", {
+      const response = await fetch("api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function Login() {
     <div className="container">
       <div className="login-container">
         <h1>LOGIN</h1>
-        <form className="login-form" onSubmit={handleSubmit} method="GET">
+        <form className="login-form" onSubmit={handleSubmit}>
           <div className="input-group">
             <label>아이디</label>
             <input

@@ -33,7 +33,7 @@ function Join() {
     }
     // /join경로에 POST요청을 보내 회원가입 시도 후 동작 수행하기
     try {
-      const response = await fetch("/join", {
+      const response = await fetch("api/join", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
