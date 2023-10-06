@@ -38,6 +38,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="*" element={<div>없는 페이지 입니다.</div>} />
+          <Route path="/meongmeong" element={<Main />} />
           <Route path="/" element={<Main />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/shop/product/:id" element={<Detail />} />
