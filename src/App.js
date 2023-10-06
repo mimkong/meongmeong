@@ -37,7 +37,6 @@ function App() {
       <div className="content-wrapper">
         <Header />
         <Routes>
-          <Route path="*" element={<div>없는 페이지 입니다.</div>} />
           <Route path="/meongmeong" element={<Main />} />
           <Route path="/" element={<Main />} />
           <Route path="/shop" element={<Shop />} />
@@ -50,6 +49,7 @@ function App() {
           <Route path="/order" element={<Order />} />
           <Route path="/order-complete" element={<OrderComplete />} />
           <Route path="/shop/:category" element={<Shop />} />
+          {/* <Route path="*" element={<div>없는 페이지 입니다.</div>} /> */}
         </Routes>
       </div>
       <Footer />
