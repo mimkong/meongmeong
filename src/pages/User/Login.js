@@ -41,7 +41,7 @@ function Login() {
     <div className="container">
       <div className="login-container">
         <h1>LOGIN</h1>
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit} method="GET">
           <div className="input-group">
             <label>아이디</label>
             <input
