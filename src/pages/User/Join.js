@@ -29,7 +29,7 @@ function Join() {
     e.preventDefault();
 
     if (!validateInput(formData)) {
-      return; // 유효성 검사 실패 시 함수 종료
+      return; // 유효성 검사 실패 시 함수 종료하기
     }
     // /join경로에 POST요청을 보내 회원가입 시도 후 동작 수행하기
     try {
