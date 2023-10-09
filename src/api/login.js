@@ -1,4 +1,5 @@
 module.exports = (req, res) => {
+  console.log(req.body);
   if (req.method !== "POST") {
     return res.status(405).end();
   }

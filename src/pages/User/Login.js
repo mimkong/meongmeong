@@ -33,7 +33,6 @@ function Login() {
       }
     } catch (error) {
       console.error("로그인 에러:", error);
-      console.log(req.body);
       alert("로그인 중 문제가 발생했습니다.");
     }
   };
