@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import "../styles/PageStyle.css";
 import CartModal from "../components/CartModal";
@@ -17,7 +17,8 @@ function RecentlyViewedItem() {
 
   const matchedItems = watchedId
     .map((watchedId) => items.find((item) => item.id === watchedId))
-    .filter(Boolean);
+    .filter(Boolean)
+    .reverse();
 
   const deleteItem = (id) => {
     const isConfirmed = window.confirm("정말 삭제하시겠습니까?");
