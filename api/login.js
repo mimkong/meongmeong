@@ -17,6 +17,6 @@ module.exports = async (req, res) => {
       res.status(400).json({ error: "아이디나 비밀번호가 잘못되었습니다." });
     }
   } catch (e) {
-    res.status(400).send("Error parsing JSON");
+    res.status(400).json({ error: "Error parsing JSON" });
   }
 };
