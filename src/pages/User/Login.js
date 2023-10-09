@@ -23,10 +23,7 @@ function Login() {
         }),
       });
 
-      const data =
-        response.headers.get("Content-Type") === "application/json"
-          ? await response.json()
-          : {};
+      const data = await response.json();
 
       if (response.ok) {
         loginUser();
