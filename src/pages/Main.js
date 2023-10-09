@@ -28,7 +28,7 @@ function Main() {
         <h1>BEST of THIS MONTH</h1>
         <Row md={3}>
           {bestItems.map((a, i) => {
-            return <Card key={i} bestItems={bestItems[i]} i={i + 1}></Card>;
+            return <Card key={a.id} bestItems={bestItems[i]} i={i + 1}></Card>;
           })}
         </Row>
         {maxBestItems < items.filter((item) => item.isBest === true).length && ( // 버튼을 최대 아이템 개수보다 작을 때만 표시
