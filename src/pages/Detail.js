@@ -18,6 +18,11 @@ function Detail() {
   const userState = useSelector((state) => state.user);
   const navigate = useNavigate();
 
+  // 스크롤 상단으로 설정
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // 최근 본 상품
   useEffect(() => {
     // 데이터가 준비되지 않았으면 아무것도 하지 않는다.
