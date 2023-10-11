@@ -3,8 +3,11 @@ import "../../styles/PageStyle.css";
 import DaumPost from "./DaumPost";
 import validateInput from "./validateInput";
 import useUser from "../../hooks/useUser";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 function Join() {
+  useScrollToTop();
+
   const { loginUser } = useUser();
 
   const [formData, setFormData] = useState({

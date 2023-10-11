@@ -3,8 +3,11 @@ import "../styles/PageStyle.css";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import numberWithCommas from "../utils/format";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 function Order() {
+  useScrollToTop();
+
   const [userInfo, setUserInfo] = useState({});
   const cartItems = useSelector((state) => state.cart);
   const location = useLocation();

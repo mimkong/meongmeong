@@ -1,6 +1,9 @@
 import "../styles/PageStyle.css";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 function OrderComplete() {
+  useScrollToTop();
+
   return (
     <>
       <h1>ORDER COMPLETE!</h1>

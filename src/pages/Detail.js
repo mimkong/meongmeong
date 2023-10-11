@@ -6,6 +6,7 @@ import useCart from "../hooks/useCart";
 import "../styles/PageStyle.css";
 import { useNavigate } from "react-router-dom";
 import numberWithCommas from "../utils/format";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 function Detail() {
   const { addToCart } = useCart();
@@ -18,10 +19,7 @@ function Detail() {
   const userState = useSelector((state) => state.user);
   const navigate = useNavigate();
 
-  // 스크롤 상단으로 설정
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  useScrollToTop();
 
   // 최근 본 상품
   useEffect(() => {

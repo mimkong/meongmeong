@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import numberWithCommas from "../utils/format";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 import {
   toggleSelection,
@@ -15,6 +16,8 @@ import {
 } from "../store";
 
 function Cart() {
+  useScrollToTop();
+
   const cartItems = useSelector((state) => state.cart);
   const userState = useSelector((state) => state.user);
 

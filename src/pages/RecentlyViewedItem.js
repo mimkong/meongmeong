@@ -5,8 +5,11 @@ import CartModal from "../components/CartModal";
 import useCart from "../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import numberWithCommas from "../utils/format";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 function RecentlyViewedItem() {
+  useScrollToTop();
+
   const [watchedId, setWatchedId] = useState([]);
   const items = useSelector((state) => state.item);
 

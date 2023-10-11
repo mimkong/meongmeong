@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "../../styles/PageStyle.css";
 import useUser from "../../hooks/useUser";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 function Login() {
+  useScrollToTop();
+
   const [Id, setId] = useState("");
   const [password, setPassword] = useState("");
 

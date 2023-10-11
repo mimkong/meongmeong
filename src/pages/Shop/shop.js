@@ -3,8 +3,11 @@ import Category from "./Category";
 import ProductList from "./ProductList";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 function Shop({}) {
+  useScrollToTop();
+
   const categoriesData = [
     { id: "1", name: "ALL", categories: null },
     { id: "2", name: "LIVING", categories: "living" },
