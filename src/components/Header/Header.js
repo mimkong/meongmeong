@@ -72,7 +72,12 @@ function Header() {
         {isLoggedIn ? (
           <>
             {/* 로그인 상태일 때 표시할 링크들 */}
-            <button className="nav__mypage__li">검색</button>
+            <button
+              className="nav__mypage__li"
+              onClick={() => setIsModalOpen(true)}
+            >
+              검색
+            </button>
             <div className={`search-modal ${isModalOpen ? "open" : ""}`}>
               <div className="search-container">
                 <input
@@ -88,7 +93,7 @@ function Header() {
                 className="search-close-btn"
                 onClick={() => setIsModalOpen(false)}
               >
-                <FontAwesomeIcon icon={faX} size="xs" />
+                <FontAwesomeIcon icon={faX} size="x" />
               </button>
             </div>
             <button className="nav__mypage__li" onClick={handleLogout}>
