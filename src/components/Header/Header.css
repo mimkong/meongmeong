@@ -95,6 +95,49 @@
   background-color: #e1c08d;
   color: #fff;
 }
+
+.search-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 95px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.search-modal.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-btn,
+.search-close-btn {
+  background-color: #fff;
+  color: var(--main-color);
+}
+
+.search-btn,
+.search-input {
+  border-radius: 0;
+  border: none;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--main-color);
+  font-size: 1rem;
+  color: var(--main-color);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 768px) {
   .nav {
     display: flex;

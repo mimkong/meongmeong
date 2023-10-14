@@ -76,8 +76,25 @@ const user = createSlice({
   },
 });
 
+const search = createSlice({
+  name: "search",
+  initialState: {
+    results: [],
+  },
+  reducers: {
+    setSearchResults: (state, action) => {
+      state.results = action.payload;
+    },
+  },
+});
+
 export default configureStore({
-  reducer: { item: item.reducer, cart: cart.reducer, user: user.reducer },
+  reducer: {
+    item: item.reducer,
+    cart: cart.reducer,
+    user: user.reducer,
+    search: search.reducer,
+  },
 });
 
 export const { changeItem } = item.actions;
@@ -92,3 +109,4 @@ export const {
   selectedItems,
 } = cart.actions;
 export const { login, logout } = user.actions;
+export const { setSearchResults } = search.actions;
