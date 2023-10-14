@@ -89,4 +89,8 @@
 
 ### ✍ [회고록 & 개발 블로그](https://velog.io/@x5foddl/Project-%EC%87%BC%ED%95%91%EB%AA%B0-%EA%B8%B0%ED%9A%8D%EC%95%88)
 
-
+---
+## ➕ 추가적인 기능
+### 💡 검색하기
+- 검색으로 상품 찾기 가능
+- <img src="https://github.com/mimkong/meongmeong/assets/104357796/08d4c0ec-8fb8-488a-84da-bb1a2e1b4a94" />
