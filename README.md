@@ -2,7 +2,7 @@
 ![logo](https://github.com/mimkong/meongmeong/assets/104357796/cbfac2df-7d32-4770-b6c1-b079b52b8b10)
 > 건강한 반려동물들을 위한 애완용품 쇼핑몰 서비스
 >
-> [배포 링크](https://meongmeong.vercel.app/)
+> [배포 링크 바로가기](https://meongmeong.vercel.app/)
 <br>
 
 ## 📅 제작기간 : 2023.08.20 ~ 2023.09.30 (5주)
