@@ -87,7 +87,7 @@
 ## ✅ 기술스택
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
 
-### ✍ [회고록 & 개발 블로그](https://velog.io/@x5foddl/Project-%EC%87%BC%ED%95%91%EB%AA%B0-%EA%B8%B0%ED%9A%8D%EC%95%88)
+### ✍ [회고록 & 개발 블로그](https://velog.io/@x5foddl/%EA%B1%B4%EA%B0%95%ED%95%9C-%EB%A9%8D%EB%A9%8D-%EA%B0%9C%EC%9D%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9A%8C%EA%B3%A0%EB%A1%9D)
 
 ---
 ## ➕ 추가적인 기능
